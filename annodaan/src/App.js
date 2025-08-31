@@ -1,24 +1,20 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
-import Header from './Header';
-import Breadcrumbs from './Breadcrumbs';
-import Home from './Home';
-import DonateHere from './DonateHere';
-import AboutUs from './AboutUs';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+import Header from "./Header";
+import Breadcrumbs from "./Breadcrumbs";
+import MainContent from "./MainContent";
+import DonateHere from "./DonateHere";
 
 function App() {
   return (
     <Router>
-      <div className="App">
-        <Header />
-        <Breadcrumbs />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/donate" element={<DonateHere />} />
-          <Route path="/about" element={<AboutUs />} />
-        </Routes>
-      </div>
+      <Header />
+      <Breadcrumbs />
+      <Routes>
+        <Route path="/" element={<MainContent />} />
+        <Route path="/donate" element={<DonateHere />} />
+      </Routes>
     </Router>
   );
 }

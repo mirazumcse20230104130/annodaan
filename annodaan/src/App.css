@@ -1,16 +1,12 @@
 /* General body styling */
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: #F6D9C1; /* Matches left side background */
+* {
+  box-sizing: border-box; /* Ensures padding doesn't cause overflow */
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #FFF6EA;
 }
 
 /* Header */
@@ -20,28 +16,27 @@ code {
   padding: 20px;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
 }
 
-.header-content {
-  text-align: left;
-}
-
-h1 {
-  margin: 0;
-  font-size: 32px;
+/* Logo image */
+.logo-img {
+  width: 93px;    /* Change to resize logo */
+  height: auto;
+  margin-right: 15px;
 }
 
 /* Breadcrumbs */
 .breadcrumb-bg {
   background-color: #ffe8d6;
   padding: 10px;
+  margin-bottom: 40px;
   display: flex;
   justify-content: flex-end;
 }
 
 .breadcrumb-custom .breadcrumb-item a {
-  color: #4a4a4a;
+  color: gray;
+  text-decoration: none;
 }
 
 .breadcrumb-custom .breadcrumb-item a:hover {
@@ -50,153 +45,87 @@ h1 {
 
 .breadcrumb-custom .breadcrumb-item.active {
   color: #f4a261;
+  font-weight: bold;
 }
 
-/* Main content container */
-.content-bg {
-  background-color: #FFF5E9;
-  padding: 50px 20px 20px 20px;
+/* Carousel container */
+.carousel-container {
+  width: 80%;               /* Keep responsive */
+  max-width: 900px;         /* Prevent too wide on large screens */
+  margin: 0 auto 40px auto;
+}
+
+.carousel-img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+/* Description section */
+.main-description {
+  width: 100%;             /* Controls overall bg width */
+  max-width: 1200px;      /* Optional: maximum width */
+  margin: 0 auto 40px auto;  /* Center horizontally with bottom spacing */
+  padding: 50px 50px;     /* Padding inside the bg */
+  background-color: #f6d9c1; /* Description background */
+  text-align: center;     /* Center title */
+  border-radius: 25px;    /* Optional: rounded corners */
+}
+
+
+.main-description h2 {
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+
+.main-description p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* Cards container */
+.right-content-cards {
   display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  flex-wrap: wrap;
-}
-
-/* Left side content (text + image) */
-.left-content {
-  width: 45%;
+  flex-wrap: wrap;           /* Wrap cards on smaller screens */
+  justify-content: center;   /* Center cards */
+  gap: 20px;
   padding: 20px;
-  background-color: #FFF5E9;
+  background-color: #FFF6EA;
 }
 
-/* Wrapper for image + first text */
-.image-text-wrapper {
-  display: flex;
-  flex-direction: row;  /* text left, image right */
-  align-items: flex-start;
-  gap: 20px;            /* Space between text and image; adjust as needed */
-}
-
-/* Text next to image */
-.text-next-to-image {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 300px;          
-  margin-left: 0px;      
-}
-
-.text-next-to-image h2 {
-  font-size: 40px;       
-  margin: 0 0 10px 0;    
-  line-height: 1.2;      
-}
-
-.text-next-to-image p {
-  font-size: 18px;       
-  line-height: 1.5;      
-  margin: 0;
-}
-
-/* Text below image */
-.text-below-image {
-  margin-top: 60px;      /* Increased gap between image and below text */
-  font-size: 20px;       /* Bigger font for readability */
-  line-height: 1.8;      /* Better line spacing */
-  color: #333;           /* Slightly darker text */
-}
-
-/* Community image */
-.left-content .community-img {
-  position: relative;    
-  display: block;        
-  margin: 0;
-  width: 400px;          
-  height: auto;          
-  border-radius: 40px;   
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2); 
-  left: 100px;           
-}
-
-/* Right side content (buttons block) */
-.right-content {
-  width: 25%;
-  margin-left: 20%;
-  padding: 60px 25px;
-  background-color: #ffe8d6;
-  border-radius: 40px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 25px;
-  min-height: 600px;
+/* Individual option cards */
+.option-card {
+  flex: 0 1 220px;          /* Narrower width, responsive */
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  overflow: hidden;
   text-align: center;
-}
-
-/* Buttons inside right-content */
-.btn-custom {
   background-color: #f4a261;
   color: white;
-  border: none;
-  padding: 18px 50px;
-  border-radius: 30px;
-  width: 220px;
+  transition: transform 0.2s;
+}
+
+.option-card:hover {
+  transform: translateY(-5px);
+}
+
+.option-card img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.option-card h3 {
+  margin: 10px 0 5px 0;
   font-size: 18px;
-  text-align: center;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 
-.btn-custom:hover {
-  background-color: #e76f51;
-}
-
-/* Logo image */
-.logo-img {
-  border-radius: 15px;
-  width: 110px;
-  height: auto;
-}
-
-/* Responsive layout */
-@media (max-width: 768px) {
-  .content-bg {
-    flex-direction: column;
-    align-items: center;
-    padding-top: 30px;
-  }
-  .left-content,
-  .right-content {
-    width: 90%;
-    margin-left: 0;
-  }
-  .btn-custom {
-    width: 80%;
-    font-size: 16px;
-  }
-
-  /* Stack image and text vertically on mobile */
-  .image-text-wrapper {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .text-next-to-image {
-    width: 90%;
-    text-align: center;
-  }
-
-  .left-content .community-img {
-    width: 80%;
-    max-width: 300px;
-    left: 0; /* Fix alignment on mobile */
-  }
-
-  .text-below-image {
-    margin-top: 40px;  /* Smaller gap on mobile */
-    font-size: 18px;
-    line-height: 1.6;
-  }
+.option-card p {
+  font-size: 14px;
+  padding: 0 10px 15px 10px;
+  line-height: 1.4;
 }
