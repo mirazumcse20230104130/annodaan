@@ -1,38 +1,202 @@
-.App {
+/* General body styling */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #F6D9C1; /* Matches left side background */
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+/* Header */
+.header-bg {
+  background-color: #f4a261;
+  color: white;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.header-content {
+  text-align: left;
+}
+
+h1 {
+  margin: 0;
+  font-size: 32px;
+}
+
+/* Breadcrumbs */
+.breadcrumb-bg {
+  background-color: #ffe8d6;
+  padding: 10px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.breadcrumb-custom .breadcrumb-item a {
+  color: #4a4a4a;
+}
+
+.breadcrumb-custom .breadcrumb-item a:hover {
+  color: #e76f51;
+}
+
+.breadcrumb-custom .breadcrumb-item.active {
+  color: #f4a261;
+}
+
+/* Main content container */
+.content-bg {
+  background-color: #FFF5E9;
+  padding: 50px 20px 20px 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+/* Left side content (text + image) */
+.left-content {
+  width: 45%;
+  padding: 20px;
+  background-color: #FFF5E9;
+}
+
+/* Wrapper for image + first text */
+.image-text-wrapper {
+  display: flex;
+  flex-direction: row;  /* text left, image right */
+  align-items: flex-start;
+  gap: 20px;            /* Space between text and image; adjust as needed */
+}
+
+/* Text next to image */
+.text-next-to-image {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 300px;          
+  margin-left: 0px;      
+}
+
+.text-next-to-image h2 {
+  font-size: 40px;       
+  margin: 0 0 10px 0;    
+  line-height: 1.2;      
+}
+
+.text-next-to-image p {
+  font-size: 18px;       
+  line-height: 1.5;      
+  margin: 0;
+}
+
+/* Text below image */
+.text-below-image {
+  margin-top: 60px;      /* Increased gap between image and below text */
+  font-size: 20px;       /* Bigger font for readability */
+  line-height: 1.8;      /* Better line spacing */
+  color: #333;           /* Slightly darker text */
+}
+
+/* Community image */
+.left-content .community-img {
+  position: relative;    
+  display: block;        
+  margin: 0;
+  width: 400px;          
+  height: auto;          
+  border-radius: 40px;   
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2); 
+  left: 100px;           
+}
+
+/* Right side content (buttons block) */
+.right-content {
+  width: 25%;
+  margin-left: 20%;
+  padding: 60px 25px;
+  background-color: #ffe8d6;
+  border-radius: 40px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  min-height: 600px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+/* Buttons inside right-content */
+.btn-custom {
+  background-color: #f4a261;
   color: white;
+  border: none;
+  padding: 18px 50px;
+  border-radius: 30px;
+  width: 220px;
+  font-size: 18px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.App-link {
-  color: #61dafb;
+.btn-custom:hover {
+  background-color: #e76f51;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Logo image */
+.logo-img {
+  border-radius: 15px;
+  width: 110px;
+  height: auto;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+  .content-bg {
+    flex-direction: column;
+    align-items: center;
+    padding-top: 30px;
   }
-  to {
-    transform: rotate(360deg);
+  .left-content,
+  .right-content {
+    width: 90%;
+    margin-left: 0;
+  }
+  .btn-custom {
+    width: 80%;
+    font-size: 16px;
+  }
+
+  /* Stack image and text vertically on mobile */
+  .image-text-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .text-next-to-image {
+    width: 90%;
+    text-align: center;
+  }
+
+  .left-content .community-img {
+    width: 80%;
+    max-width: 300px;
+    left: 0; /* Fix alignment on mobile */
+  }
+
+  .text-below-image {
+    margin-top: 40px;  /* Smaller gap on mobile */
+    font-size: 18px;
+    line-height: 1.6;
   }
 }
