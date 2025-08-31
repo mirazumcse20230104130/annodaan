@@ -1,38 +1,149 @@
-.App {
-  text-align: center;
+/* General body styling */
+* {
+  box-sizing: border-box; /* Ensures padding doesn't cause overflow */
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-family: Arial, sans-serif;
+  background-color: #FFF6EA;
+  overflow-x: hidden; /* Prevent side scroll */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+/* Header */
+.header-bg {
+  background-color: #f4a261;
   color: white;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 100vw; /* Ensure header never exceeds viewport */
 }
 
-.App-link {
-  color: #61dafb;
+/* Logo image */
+.logo-img {
+  width: 93px;
+  height: auto;
+  margin-right: 15px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Breadcrumbs */
+.breadcrumb-bg {
+  background-color: #ffe8d6;
+  padding: 10px;
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  max-width: 100vw;
+}
+
+.breadcrumb-custom .breadcrumb-item a {
+  color: gray;
+  text-decoration: none;
+}
+
+.breadcrumb-custom .breadcrumb-item a:hover {
+  color: #e76f51;
+}
+
+.breadcrumb-custom .breadcrumb-item.active {
+  color: #f4a261;
+  font-weight: bold;
+}
+
+/* Carousel container */
+.carousel-container {
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto 40px auto;
+}
+
+.carousel-img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+/* Description section */
+.main-description {
+  width: calc(100% - 20px);  /* 10px gap on each side */
+  max-width: 1200px;
+  margin: 0 auto 40px auto;
+  padding: 50px 20px;       /* Adjust padding as needed */
+  background-color: #f6d9c1;
+  text-align: center;
+  border-radius: 25px;
+}
+
+.main-description h2 {
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+
+.main-description p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* Cards container */
+.right-content-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  background-color: #FFF6EA;
+  width: 100%;
+  max-width: 100vw;
+}
+
+/* Individual option cards */
+.option-card {
+  flex: 0 1 220px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  overflow: hidden;
+  text-align: center;
+  background-color: #f4a261;
+  color: white;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.option-card:hover {
+  transform: translateY(-5px);
+  background-color: #D97B36;
+}
+
+.option-card img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.option-card h3 {
+  margin: 10px 0 5px 0;
+  font-size: 20px;
+  font-family: 'Trebuchet MS', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #fff;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+}
+
+.option-card:hover h3 {
+  color: #ffebcc;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+}
+
+.option-card p {
+  font-size: 14px;
+  padding: 0 10px 15px 10px;
+  line-height: 1.4;
 }
