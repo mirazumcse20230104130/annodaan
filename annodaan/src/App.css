@@ -1,12 +1,14 @@
 /* General body styling */
 * {
   box-sizing: border-box; /* Ensures padding doesn't cause overflow */
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  margin: 0;
   font-family: Arial, sans-serif;
   background-color: #FFF6EA;
+  overflow-x: hidden; /* Prevent side scroll */
 }
 
 /* Header */
@@ -16,11 +18,13 @@ body {
   padding: 20px;
   display: flex;
   align-items: center;
+  width: 100%;
+  max-width: 100vw; /* Ensure header never exceeds viewport */
 }
 
 /* Logo image */
 .logo-img {
-  width: 93px;    /* Change to resize logo */
+  width: 93px;
   height: auto;
   margin-right: 15px;
 }
@@ -32,6 +36,8 @@ body {
   margin-bottom: 40px;
   display: flex;
   justify-content: flex-end;
+  width: 100%;
+  max-width: 100vw;
 }
 
 .breadcrumb-custom .breadcrumb-item a {
@@ -50,8 +56,8 @@ body {
 
 /* Carousel container */
 .carousel-container {
-  width: 80%;               /* Keep responsive */
-  max-width: 900px;         /* Prevent too wide on large screens */
+  width: 90%;
+  max-width: 900px;
   margin: 0 auto 40px auto;
 }
 
@@ -64,15 +70,14 @@ body {
 
 /* Description section */
 .main-description {
-  width: 100%;             /* Controls overall bg width */
-  max-width: 1200px;      /* Optional: maximum width */
-  margin: 0 auto 40px auto;  /* Center horizontally with bottom spacing */
-  padding: 50px 50px;     /* Padding inside the bg */
-  background-color: #f6d9c1; /* Description background */
-  text-align: center;     /* Center title */
-  border-radius: 25px;    /* Optional: rounded corners */
+  width: calc(100% - 20px);  /* 10px gap on each side */
+  max-width: 1200px;
+  margin: 0 auto 40px auto;
+  padding: 50px 20px;       /* Adjust padding as needed */
+  background-color: #f6d9c1;
+  text-align: center;
+  border-radius: 25px;
 }
-
 
 .main-description h2 {
   font-size: 36px;
@@ -88,27 +93,30 @@ body {
 /* Cards container */
 .right-content-cards {
   display: flex;
-  flex-wrap: wrap;           /* Wrap cards on smaller screens */
-  justify-content: center;   /* Center cards */
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 20px;
   padding: 20px;
   background-color: #FFF6EA;
+  width: 100%;
+  max-width: 100vw;
 }
 
 /* Individual option cards */
 .option-card {
-  flex: 0 1 220px;          /* Narrower width, responsive */
+  flex: 0 1 220px;
   border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
   overflow: hidden;
   text-align: center;
   background-color: #f4a261;
   color: white;
-  transition: transform 0.2s;
+  transition: transform 0.2s, background-color 0.2s;
 }
 
 .option-card:hover {
   transform: translateY(-5px);
+  background-color: #D97B36;
 }
 
 .option-card img {
@@ -121,7 +129,17 @@ body {
 
 .option-card h3 {
   margin: 10px 0 5px 0;
-  font-size: 18px;
+  font-size: 20px;
+  font-family: 'Trebuchet MS', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #fff;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+}
+
+.option-card:hover h3 {
+  color: #ffebcc;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
 }
 
 .option-card p {

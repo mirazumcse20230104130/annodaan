@@ -68,7 +68,7 @@ const MainContent = () => {
             <Card.Body>
               <Card.Title>Donate Food</Card.Title>
               <Card.Text>
-                Make a meaningful difference in someone’s life today. Your food donations help provide healthy meals to those in need, creating hope and nourishing communities. Every contribution counts.
+                Make a meaningful difference in someone’s life today. Your food donations help provide healthy meals to those in need, creating hope and nourishing communities. 
               </Card.Text>
             </Card.Body>
           </Card>
