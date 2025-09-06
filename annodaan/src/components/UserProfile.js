@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import '../index.css';
+import profilePic from '../assets/po.jpg'; // ✅ Step 1: Import image
 
-function UserProfile() {   
+function UserProfile() {
   const [editable, setEditable] = useState(false);
   const [user, setUser] = useState({
     username: '',
@@ -32,7 +33,6 @@ function UserProfile() {
           <span>Latest</span>
           <span>About Us</span>
         </div>
-        
       </nav>
 
       <div className="profile-box">
@@ -76,7 +76,10 @@ function UserProfile() {
             />
           </div>
 
-          <div className="image-box">🖼️</div>
+          {/* ✅ Step 2: Replace emoji with real image */}
+          <div className="image-box">
+            <img src={profilePic} alt="Profile" className="profile-image" />
+          </div>
         </div>
 
         <div className="button-group">
