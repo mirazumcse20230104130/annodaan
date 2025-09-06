@@ -1,17 +1,18 @@
-import React from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
-import { Carousel, Card, Row, Col } from "react-bootstrap";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Carousel, Card, Row, Col } from 'react-bootstrap';
 
 // Carousel images
-import carousel1 from "./images/carousel1.jpg";
-import carousel2 from "./images/carousel2.jpg";
-import carousel3 from "./images/carousel3.jpg";
-import carousel4 from "./images/carousel4.jpg";
+import carousel1 from './images/carousel1.jpg';
+import carousel2 from './images/carousel2.jpg';
+import carousel3 from './images/carousel3.jpg';
+import carousel4 from './images/carousel4.jpg';
 
 // Card images
-import needFoodImg from "./images/needfood.png";
-import donateFoodImg from "./images/donatefood.png";
-import volunteerImg from "./images/volunteer.png";
+import needFoodImg from './images/needfood.png';
+import donateFoodImg from './images/donatefood.png';
+import volunteerImg from './images/volunteer.png';
 
 const MainContent = () => {
   return (
@@ -63,15 +64,17 @@ const MainContent = () => {
           </Card>
         </Col>
         <Col md={4} sm={12}>
-          <Card className="option-card">
-            <Card.Img variant="top" src={donateFoodImg} />
-            <Card.Body>
-              <Card.Title>Donate Food</Card.Title>
-              <Card.Text>
-                Make a meaningful difference in someone’s life today. Your food donations help provide healthy meals to those in need, creating hope and nourishing communities. 
-              </Card.Text>
-            </Card.Body>
-          </Card>
+          <Link to="/donate-food" style={{ textDecoration: 'none' }}>
+            <Card className="option-card">
+              <Card.Img variant="top" src={donateFoodImg} />
+              <Card.Body>
+                <Card.Title>Donate Food</Card.Title>
+                <Card.Text>
+                  Make a meaningful difference in someone’s life today. Your food donations help provide healthy meals to those in need, creating hope and nourishing communities.
+                </Card.Text>
+              </Card.Body>
+            </Card>
+          </Link>
         </Col>
         <Col md={4} sm={12}>
           <Card className="option-card">
