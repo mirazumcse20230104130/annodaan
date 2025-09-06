@@ -7,6 +7,8 @@ const Breadcrumbs = () => {
     { path: '/', label: 'Home' },
     { path: '/donate', label: 'Donate Here' },
     { path: '/about', label: 'About Us' },
+    { path: '/create-account', label: 'Sign In' },
+    { path: '/login', label: 'Login' },
   ];
 
   return (
