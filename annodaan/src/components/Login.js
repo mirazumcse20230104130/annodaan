@@ -31,7 +31,7 @@ function Login() {
           <span>Latest</span>
           <span>About Us</span>
         </div>
-        <div className="icon">👤</div>
+      
       </nav>
 
       <div className="login-box">
