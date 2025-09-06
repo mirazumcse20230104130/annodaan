@@ -217,3 +217,7 @@ code {
 .donate-food-page p { /* Targets the Selected Date text */
   color: #808080; /* Gray color */
 }
+
+.add-visuals-text {
+    font-size: 20px; /* Smaller font size on mobile */
+  }
