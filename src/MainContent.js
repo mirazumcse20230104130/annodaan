@@ -1,6 +1,6 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Carousel, Card, Row, Col, Button } from "react-bootstrap";
+import { Carousel, Card, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 // Carousel images
@@ -77,9 +77,6 @@ const MainContent = () => {
                   donations help provide healthy meals to those in need, creating hope
                   and nourishing communities.
                 </Card.Text>
-                <Button variant="warning" className="w-100 mt-2">
-                  Donate Now
-                </Button>
               </Card.Body>
             </Card>
           </Link>
