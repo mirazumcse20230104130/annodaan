@@ -85,7 +85,7 @@ const AboutUs = () => {
                   <div className="team-info">
                     <p><strong>Name:</strong> Jemima Ahmed</p>
                     <p><strong>Email:</strong> jemima.20230104133@aust.edu</p>
-                 <p>Ahsanullah University of Science Technology</p>
+                    <p>Ahsanullah University of Science Technology</p>
                   </div>
                 </div>
               </div>

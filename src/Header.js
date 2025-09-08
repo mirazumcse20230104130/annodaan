@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from './images/logo.png'; // Verify this path
+import logo from './images/logo.png';
 
 const Header = () => (
   <header className="header-bg">

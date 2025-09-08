@@ -1,6 +1,7 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Carousel, Card, Row, Col } from "react-bootstrap";
+import { Carousel, Card, Row, Col, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 // Carousel images
 import carousel1 from "./images/carousel1.jpg";
@@ -36,15 +37,17 @@ const MainContent = () => {
         <div className="content-wrapper">
           <h2>Annodaan</h2>
           <p>
-            Annodaan (অন্নদান) is a community-driven platform dedicated to reducing food waste
-            and feeding those in need. We believe that no one should sleep hungry while good food
-            goes to waste. Through Annodaan, individuals, restaurants, event organizers, and
-            households can easily donate surplus food to nearby NGOs, shelters, and people in need.
+            Annodaan (অন্নদান) is a community-driven platform dedicated to reducing food
+            waste and feeding those in need. We believe that no one should sleep hungry
+            while good food goes to waste. Through Annodaan, individuals, restaurants,
+            event organizers, and households can easily donate surplus food to nearby
+            NGOs, shelters, and people in need.
           </p>
           <p>
-            Whether it’s a warm meal from a restaurant, leftovers from a celebration, or extra
-            groceries from your home — every contribution matters. With the help of our volunteers,
-            we ensure safe, respectful, and timely food delivery to those who need it most.
+            Whether it’s a warm meal from a restaurant, leftovers from a celebration, or
+            extra groceries from your home — every contribution matters. With the help of
+            our volunteers, we ensure safe, respectful, and timely food delivery to those
+            who need it most.
           </p>
         </div>
       </div>
@@ -57,21 +60,29 @@ const MainContent = () => {
             <Card.Body>
               <Card.Title>Need Food</Card.Title>
               <Card.Text>
-                Reach out to access nutritious meals and support to get through challenging times. No one should have to go hungry.
+                Reach out to access nutritious meals and support to get through
+                challenging times. No one should have to go hungry.
               </Card.Text>
             </Card.Body>
           </Card>
         </Col>
         <Col md={4} sm={12}>
-          <Card className="option-card">
-            <Card.Img variant="top" src={donateFoodImg} />
-            <Card.Body>
-              <Card.Title>Donate Food</Card.Title>
-              <Card.Text>
-                Make a meaningful difference in someone’s life today. Your food donations help provide healthy meals to those in need, creating hope and nourishing communities. 
-              </Card.Text>
-            </Card.Body>
-          </Card>
+          <Link to="/donate-food" style={{ textDecoration: "none", color: "inherit" }}>
+            <Card className="option-card">
+              <Card.Img variant="top" src={donateFoodImg} />
+              <Card.Body>
+                <Card.Title>Donate Food</Card.Title>
+                <Card.Text>
+                  Make a meaningful difference in someone’s life today. Your food
+                  donations help provide healthy meals to those in need, creating hope
+                  and nourishing communities.
+                </Card.Text>
+                <Button variant="warning" className="w-100 mt-2">
+                  Donate Now
+                </Button>
+              </Card.Body>
+            </Card>
+          </Link>
         </Col>
         <Col md={4} sm={12}>
           <Card className="option-card">
@@ -79,7 +90,8 @@ const MainContent = () => {
             <Card.Body>
               <Card.Title>Volunteer</Card.Title>
               <Card.Text>
-                Join our team to help deliver food safely and support communities. Your time and effort make a direct impact.
+                Join our team to help deliver food safely and support communities.
+                Your time and effort make a direct impact.
               </Card.Text>
             </Card.Body>
           </Card>

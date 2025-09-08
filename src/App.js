@@ -6,6 +6,7 @@ import CreateAccount from "./CreateAccount";
 import MainContent from "./MainContent";
 import DonateHere from "./DonateHere";
 import AboutUs from "./AboutUs";
+import DonateFood from "./DonateFood";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/" element={<MainContent />} />
           <Route path="/donate" element={<DonateHere />} />
           <Route path="/about" element={<AboutUs />} />
+          <Route path="/donate-food" element={<DonateFood />} />
         </Routes>
       </div>
     </Router>
