@@ -1,0 +1,126 @@
+/* Container for the profile card */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f8efe5;
+  font-family: 'Georgia', serif;
+  padding: 20px;
+}
+
+/* Profile card box */
+.profile-box {
+  background-color: #f2d4a4;
+  border-radius: 15px;
+  box-shadow: 3px 3px 8px rgba(0,0,0,0.15);
+  width: 480px;
+  padding: 30px 40px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+/* Title "User" style */
+.profile-title {
+  font-size: 26px;
+  font-weight: 700;
+  background-color: #de8c2b;
+  padding: 10px 25px;
+  border-radius: 25px 0 25px 0;
+  color: #3d2a00;
+  width: fit-content;
+}
+
+/* Profile content layout */
+.profile-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Info section with labels and values */
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  flex: 1;
+}
+
+/* Label text style */
+.info label {
+  font-weight: 600;
+  color: #3d2a00;
+  margin-bottom: 4px;
+  font-size: 16px;
+}
+
+/* Input fields (both editable and non-editable) */
+.info input {
+  border: none;
+  background-color: white; /* ✅ Always white background */
+  font-size: 15px;
+  color: #6e5a2a;
+  font-family: 'Georgia', serif;
+  padding-left: 4px;
+  border-radius: 5px;
+  padding: 6px 8px;
+  box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
+/* When editable */
+.info input:enabled {
+  border: 1.5px solid #de8c2b;
+  background-color: white; /* ✅ Keep white */
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.info input:enabled:focus {
+  border-color: #d97f00;
+  box-shadow: 0 0 5px #d97f00;
+}
+
+/* Buttons container */
+.button-group {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+/* Edit and Save buttons */
+.button-group button {
+  background-color: #de8c2b;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 40px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #3d2a00;
+  cursor: pointer;
+  box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.3s ease;
+}
+
+.button-group button:hover {
+  background-color: #d97f00;
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 520px) {
+  .profile-box {
+    width: 100%;
+    padding: 25px 20px;
+  }
+
+  .profile-content {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .button-group button {
+    padding: 10px 30px;
+    font-size: 16px;
+  }
+}

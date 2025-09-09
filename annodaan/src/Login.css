@@ -1,0 +1,130 @@
+/* Container for the login box */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #fff6e5; /* light background */
+  font-family: 'Arial', sans-serif;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.login-box {
+  width: 450px; /* wider */
+  max-width: 100%;
+  padding: 40px 40px;
+  background-color: #f7d9b4;
+  border-radius: 20px 0 20px 0;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  transition: transform 0.3s ease;
+}
+
+.login-box:hover {
+  transform: translateY(-5px);
+}
+
+/* Title of the login box */
+.login-title {
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: 700;
+  font-size: 26px;
+  color: #e3861f;
+  letter-spacing: 1px;
+}
+
+/* Label style */
+.login-box label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #4d3e1b;
+}
+
+/* Input fields */
+.login-box input[type="text"],
+.login-box input[type="password"] {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 22px;
+  border: 1.8px solid #b77e2e;
+  border-radius: 14px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  background-color: #f1f6ff;
+  box-sizing: border-box;
+}
+
+/* Input focus effect */
+.login-box input[type="text"]:focus,
+.login-box input[type="password"]:focus {
+  border-color: #f4900c;
+  box-shadow: 0 0 8px #f4900c;
+}
+
+/* Forgot password text */
+.forgot {
+  font-size: 13px;
+  color: #5a4424;
+  margin-bottom: 20px;
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.3s ease;
+}
+
+.forgot:hover {
+  color: #d97900;
+}
+
+/* Login button */
+.login-box button {
+  width: 100%;
+  background-color: #f4900c;
+  border: none;
+  padding: 14px 0;
+  border-radius: 14px;
+  font-weight: 700;
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+  box-shadow: 3px 6px 8px rgba(0, 0, 0, 0.18);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-box button:hover {
+  background-color: #d97900;
+  box-shadow: 4px 8px 10px rgba(0, 0, 0, 0.22);
+}
+
+/* Create account text */
+.create-account {
+  margin-top: 25px;
+  font-size: 14px;
+  color: #4d3e1b;
+  text-align: center;
+  user-select: none;
+}
+
+.create-account a {
+  color: #2978b5;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.create-account a:hover {
+  color: #1b4f72;
+  text-decoration: underline;
+}
+
+/* Responsive for small screens */
+@media screen and (max-width: 480px) {
+  .login-box {
+    width: 100%;
+    padding: 30px 20px;
+    border-radius: 16px;
+  }
+}
