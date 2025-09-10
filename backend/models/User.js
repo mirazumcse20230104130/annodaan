@@ -9,4 +9,4 @@ const userSchema = new mongoose.Schema({
 });
 
 // Export default so you can import like: import User from '../models/User.js'
-export default mongoose.model('User', userSchema);
+export default mongoose.model('User', userSchema, 'create_users');
