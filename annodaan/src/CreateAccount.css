@@ -1,0 +1,92 @@
+/* Container */
+.create-account {
+  max-width: 400px;
+  margin: 80px auto;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: transform 0.2s ease;
+}
+
+.create-account:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* Title */
+.create-account h2 {
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+/* Inputs */
+.create-account input {
+  width: 100%;
+  padding: 12px 15px;
+  margin: 12px 0;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 15px;
+  outline: none;
+  text-align: left; /* left-aligned text */
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.create-account input::placeholder {
+  text-align: left; /* left-aligned placeholder */
+}
+
+.create-account input:focus {
+  border-color: #f4a261;
+  box-shadow: 0 0 6px rgba(244, 162, 97, 0.3);
+}
+
+/* Buttons - both Create Account & Google */
+.create-account button {
+  width: 100%;
+  padding: 14px;
+  margin: 12px 0;
+  background: linear-gradient(135deg, #f4a261, #e76f51);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.1s ease;
+}
+
+.create-account button:hover {
+  background: linear-gradient(135deg, #e76f51, #d65a31);
+  transform: translateY(-2px);
+}
+
+.create-account button:active {
+  transform: scale(0.98);
+}
+
+/* Google Button - same style */
+.google-btn {
+  margin-top: 5px; /* space between buttons */
+}
+
+/* Paragraph + Link */
+.create-account p {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #666;
+}
+
+.create-account a {
+  color: #e76f51;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.create-account a:hover {
+  text-decoration: underline;
+}
