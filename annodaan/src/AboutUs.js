@@ -43,11 +43,28 @@ const AboutUs = () => {
               </div>
 
               <div className="mission-boxes">
-                <div className="box">Food Distributed: 10,000+ Meals</div>
-                <div className="box">Communities Served: 50+</div>
-                <div className="box">Volunteers: 200+</div>
-                <div className="box">Sustainability Rate: 85%</div>
-              </div>
+              <div className="box">
+    We have distributed over 10,000 meals <br />
+    to communities in need, reaching people <br />
+    in every corner of the city.
+  </div>
+  <div className="box">
+    Our programs have served more than 50 <br />
+    different communities, helping families <br />
+    improve their daily lives.
+  </div>
+  <div className="box">
+    A team of 200 dedicated volunteers <br />
+    works tirelessly to deliver food <br />
+    and support to those who need it most.
+  </div>
+  <div className="box">
+    We maintain a sustainability rate of 85%, <br />
+    ensuring long-term impact in every <br />
+    project we undertake.
+  </div>
+</div>
+
             </>
           )}
 
