@@ -1,0 +1,80 @@
+/* NeedFood page container */
+.need-food-page {
+  padding: 20px;
+  margin-top: 130px; /* Original value */
+  min-height: calc(100vh - 130px);
+}
+
+/* Title styling */
+.need-title {
+  font-size: 36px; /* Matches original size */
+  color: #000000; /* Black color */
+  font-weight: 700; /* Bold for emphasis */
+  text-align: center; /* Centered like other page content */
+  margin-bottom: 20px; /* Consistent spacing */
+}
+
+/* Custom table styling */
+.custom-table {
+  background-color: #ffe8d6 !important; /* Light orange shade */
+  border-radius: 15px; /* More rounded corners */
+  overflow: hidden; /* Ensures content respects border radius */
+  width: 100%;
+}
+
+.custom-table th,
+.custom-table td {
+  border-color: #e8b4a0; /* Lighter border color to match theme */
+}
+
+.custom-table th {
+  background-color: #f4a261; /* Darker orange for header */
+  color: white;
+  padding: 12px;
+  text-align: left;
+}
+
+.custom-table td {
+  padding: 10px;
+  vertical-align: middle;
+}
+
+.custom-table tr {
+  border-radius: 10px; /* Slightly rounded rows */
+}
+
+.custom-table tr:hover {
+  background-color: #ffddcc; /* Slightly darker light orange hover effect */
+}
+
+/* Alert styling */
+.alert {
+  margin-top: 10px;
+}
+
+/* Button container styling to center the button */
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* Button styling */
+.btn-warning {
+  background-color: #f4a261;
+  border-color: #f4a261;
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+.btn-warning:hover {
+  background-color: #D97B36;
+  border-color: #D97B36;
+}
+
+/* Loading and no donations text */
+.need-food-page p {
+  text-align: center;
+  font-size: 16px;
+  color: #333;
+}

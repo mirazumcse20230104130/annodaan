@@ -55,16 +55,18 @@ const MainContent = () => {
       {/* Cards */}
       <Row className="right-content-cards text-center">
         <Col md={4} sm={12}>
-          <Card className="option-card">
-            <Card.Img variant="top" src={needFoodImg} />
-            <Card.Body>
-              <Card.Title>Need Food</Card.Title>
-              <Card.Text>
-                Reach out to access nutritious meals and support to get through
-                challenging times. No one should have to go hungry.
-              </Card.Text>
-            </Card.Body>
-          </Card>
+          <Link to="/need-food" style={{ textDecoration: "none", color: "inherit" }}>
+            <Card className="option-card">
+              <Card.Img variant="top" src={needFoodImg} />
+              <Card.Body>
+                <Card.Title>Need Food</Card.Title>
+                <Card.Text>
+                  Reach out to access nutritious meals and support to get through
+                  challenging times. No one should have to go hungry.
+                </Card.Text>
+              </Card.Body>
+            </Card>
+          </Link>
         </Col>
         <Col md={4} sm={12}>
           <Link to="/donate-food" style={{ textDecoration: "none", color: "inherit" }}>
