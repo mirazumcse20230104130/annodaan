@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './AboutUs.css';
 import headerImage from './header.jpg';
+import teamBannerImage from './team-banner.jpg'; // separate team banner
 import team1Image from './team1.jpg';
 import team2Image from './team2.jpg';
 import team3Image from './team3.jpg';
@@ -30,6 +31,8 @@ const AboutUs = () => {
     <div className="about-us-container">
       <div className="main-layout">
         <div className="content-section">
+
+          {/* Mission Section */}
           {showMission && (
             <>
               <div className="header-image">
@@ -43,38 +46,40 @@ const AboutUs = () => {
               </div>
 
               <div className="mission-boxes">
-              <div className="box">
-    We have distributed over 10,000 meals <br />
-    to communities in need, reaching people <br />
-    in every corner of the city.
-  </div>
-  <div className="box">
-    Our programs have served more than 50 <br />
-    different communities, helping families <br />
-    improve their daily lives.
-  </div>
-  <div className="box">
-    A team of 200 dedicated volunteers <br />
-    works tirelessly to deliver food <br />
-    and support to those who need it most.
-  </div>
-  <div className="box">
-    We maintain a sustainability rate of 85%, <br />
-    ensuring long-term impact in every <br />
-    project we undertake.
-  </div>
-</div>
-
+                <div className="box">
+                  We have distributed over 10,000 meals <br />
+                  to communities in need, reaching people <br />
+                  in every corner of the city.
+                </div>
+                <div className="box">
+                  Our programs have served more than 50 <br />
+                  different communities, helping families <br />
+                  improve their daily lives.
+                </div>
+                <div className="box">
+                  A team of 200 dedicated volunteers <br />
+                  works tirelessly to deliver food <br />
+                  and support to those who need it most.
+                </div>
+                <div className="box">
+                  We maintain a sustainability rate of 85%, <br />
+                  ensuring long-term impact in every <br />
+                  project we undertake.
+                </div>
+              </div>
             </>
           )}
 
+          {/* Team Section */}
           {showTeam && (
             <>
-              <div className="header-image">
-                <img src={headerImage} alt="Team Header" />
+              <div className="header-image team-header">
+                <img src={teamBannerImage} alt="Team Header" />
                 <div className="overlay-text">
                   Meet Our Dedicated Team
-                  <div className="overlay-subtext">“Our dedicated team works passionately to make food donation simple and impactful. Each member brings unique skills to help communities in need. Together, we strive to create a sustainable and compassionate future through our collective efforts.”</div>
+                  <div className="overlay-subtext">
+                    “Our dedicated team works passionately to make food donation simple and impactful. Each member brings unique skills to help communities in need. Together, we strive to create a sustainable and compassionate future through our collective efforts.”
+                  </div>
                 </div>
               </div>
 
@@ -108,6 +113,7 @@ const AboutUs = () => {
               </div>
             </>
           )}
+
         </div>
       </div>
     </div>
