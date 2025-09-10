@@ -7,15 +7,30 @@ function Login() {
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
 
-    if (username && password) {
-      alert(`Logged in as: ${username}`);
-      // Pass username as state to /profile
-      navigate('/profile', { state: { username } });
-    } else {
-      alert('Please enter username and password');
+    try {
+      const response = await fetch('http://localhost:5000/api/donate/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ username, password }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        alert(data.message); // Login successful
+        // Navigate to profile with username
+        navigate('/profile', { state: { username: data.username } });
+      } else {
+        alert(data.message || 'Login failed');
+      }
+    } catch (error) {
+      console.error('Login error:', error);
+      alert('Something went wrong. Please try again later.');
     }
   };
 

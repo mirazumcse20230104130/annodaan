@@ -6,12 +6,12 @@ import CreateAccount from "./CreateAccount";
 import MainContent from "./MainContent";
 import DonateHere from "./DonateHere";
 import AboutUs from "./AboutUs";
- login/userprofile
+
 import Login from "./Login";
-import UserProfile from "./UserProfile"; // ✅ Import the missing component
+import UserProfile from "./UserProfile"; 
 
 import DonateFood from "./DonateFood";
- main
+
 
 function App() {
   return (
@@ -24,12 +24,12 @@ function App() {
           <Route path="/create-account" element={<CreateAccount />} />
           <Route path="/donate" element={<DonateHere />} />
           <Route path="/about" element={<AboutUs />} />
-login/userprofile
+
           <Route path="/login" element={<Login />} />
           <Route path="/profile" element={<UserProfile />} /> {/* ✅ NEW route */}
 
           <Route path="/donate-food" element={<DonateFood />} />
- main
+ 
         </Routes>
       </div>
     </Router>
