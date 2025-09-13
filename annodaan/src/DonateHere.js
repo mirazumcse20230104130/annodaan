@@ -4,7 +4,7 @@ const DonateHere = () => {
   return (
     <div className="donate-page">
       <h2>Donate Here</h2>
-      <p>Coming soon: donation form...</p>
+      <p>Coming soon: organizations</p>
     </div>
   );
 };
