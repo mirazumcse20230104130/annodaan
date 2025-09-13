@@ -10,18 +10,30 @@ const DonateFood = () => {
   const [message, setMessage] = useState("");
   const [submissionStatus, setSubmissionStatus] = useState(null);
   const [errors, setErrors] = useState({});
+  const [foodType, setFoodType] = useState("Fresh Food");
+  const [submitting, setSubmitting] = useState(false); // New state to track submission
   const maxItems = 10;
 
   const handleDateChange = (e) => {
     const inputDate = e.target.value;
     if (inputDate) {
       const date = new Date(inputDate);
-      if (date instanceof Date && !isNaN(date)) {
+      const today = new Date();
+      let cutoffDate;
+      if (foodType === "Fresh Food") {
+        cutoffDate = new Date(today.setDate(today.getDate() - 2));
+      } else { // Dry Food
+        cutoffDate = new Date(today.setMonth(today.getMonth() - 3));
+      }
+      if (date instanceof Date && !isNaN(date) && date >= cutoffDate) {
         setSelectedDate(inputDate);
         setErrors((prev) => ({ ...prev, date: "" }));
       } else {
         setSelectedDate("");
-        setErrors((prev) => ({ ...prev, date: "Invalid date" }));
+        setErrors((prev) => ({
+          ...prev,
+          date: `Date must be within the last ${foodType === "Fresh Food" ? "2 days" : "3 months"}`,
+        }));
       }
     } else {
       setSelectedDate("");
@@ -32,7 +44,7 @@ const DonateFood = () => {
   const formatDisplayDate = (dateStr) => {
     if (!dateStr) return "";
     const date = new Date(dateStr);
-    return date.toLocaleDateString("en-GB"); // Outputs dd/mm/yyyy
+    return date.toLocaleDateString("en-GB");
   };
 
   const handleChange = (id, field, value) => {
@@ -57,7 +69,7 @@ const DonateFood = () => {
           "Quantity must be a valid number";
     });
     setErrors(newErrors);
-    console.log("Errors set:", newErrors); // Debug log
+    console.log("Errors set:", newErrors);
     return Object.keys(newErrors).length === 0;
   };
 
@@ -71,11 +83,15 @@ const DonateFood = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (submitting) return; // Prevent multiple submissions
+    setSubmitting(true); // Disable further submissions
+
     if (!validateForm()) {
       setSubmissionStatus({
         type: "error",
         message: "Please fill in all required fields.",
       });
+      setSubmitting(false); // Re-enable on validation failure
       return;
     }
 
@@ -86,12 +102,13 @@ const DonateFood = () => {
       type: item.type,
       quantity: parseInt(item.quantity) || 0,
     }));
-    console.log("Formatted food items for submission:", formattedFoodItems); // Debug log
+    console.log("Formatted food items for submission:", formattedFoodItems);
     if (formattedFoodItems.length === 0) {
       setSubmissionStatus({
         type: "error",
         message: "No valid food items to donate.",
       });
+      setSubmitting(false); // Re-enable on no valid items
       return;
     }
 
@@ -128,6 +145,8 @@ const DonateFood = () => {
         type: "error",
         message: `Error submitting donation: ${error.response?.data?.message || error.message}`,
       });
+    } finally {
+      setSubmitting(false); // Re-enable after request completes (success or failure)
     }
   };
 
@@ -162,6 +181,18 @@ const DonateFood = () => {
                   {errors.name}
                 </p>
               )}
+            </Form.Group>
+
+            <Form.Group className="mb-3">
+              <Form.Label>Food Type</Form.Label>
+              <Form.Select
+                value={foodType}
+                onChange={(e) => setFoodType(e.target.value)}
+                aria-describedby="food-type-error"
+              >
+                <option value="Fresh Food">Fresh Food</option>
+                <option value="Dry Food">Dry Food</option>
+              </Form.Select>
             </Form.Group>
 
             <Form.Group className="mb-3">
@@ -286,6 +317,7 @@ const DonateFood = () => {
           variant="warning"
           type="submit"
           className="w-25 mt-3"
+          disabled={submitting} // Disable button while submitting
           aria-label="Submit donation"
         >
           Submit

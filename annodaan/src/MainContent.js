@@ -44,7 +44,7 @@ const MainContent = () => {
             NGOs, shelters, and people in need.
           </p>
           <p>
-            Whether it’s a warm meal from a restaurant, leftovers from a celebration, or
+            Whether it's a warm meal from a restaurant, leftovers from a celebration, or
             extra groceries from your home — every contribution matters. With the help of
             our volunteers, we ensure safe, respectful, and timely food delivery to those
             who need it most.
@@ -96,6 +96,18 @@ const MainContent = () => {
           </Card>
         </Col>
       </Row>
+
+      {/* New Contact Footer Block with Gray Background and White Text */}
+      <div className="contact-footer-block">
+        <div className="footer-content">
+          <h4>Contact Us</h4>
+          <p><strong>Address:</strong> 24/A, Zigatola Post Office, Zigatola, Dhanmondi-4, Dhaka-1200 </p>
+          <hr />
+          <p><strong>Email:</strong> <a href="mailto:info@annodaan.org">info@annodaan.org</a></p>
+          <hr />
+          <p><strong>Phone:</strong> 0183********</p>
+        </div>
+      </div>
     </div>
   );
 };
