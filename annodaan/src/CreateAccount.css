@@ -23,8 +23,9 @@
   font-weight: 600;
 }
 
-/* Inputs */
-.create-account input {
+/* Inputs and Select */
+.create-account input,
+.create-account select {
   width: 100%;
   padding: 12px 15px;
   margin: 12px 0;
@@ -36,13 +37,24 @@
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.create-account input::placeholder {
+.create-account input::placeholder,
+.create-account select::placeholder {
   text-align: left; /* left-aligned placeholder */
 }
 
-.create-account input:focus {
+.create-account input:focus,
+.create-account select:focus {
   border-color: #f4a261;
   box-shadow: 0 0 6px rgba(244, 162, 97, 0.3);
+}
+
+/* Labels */
+.create-account label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #333;
+  font-weight: 500;
 }
 
 /* Buttons - both Create Account & Google */

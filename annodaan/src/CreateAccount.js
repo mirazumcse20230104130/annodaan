@@ -8,6 +8,7 @@ const CreateAccount = () => {
     name: '',
     email: '',
     password: '',
+    role: 'general', // Default role
   });
 
   const handleChange = (e) => {
@@ -16,14 +17,15 @@ const CreateAccount = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log('Form Data:', formData); // Debug
     try {
       const res = await axios.post(
-        'http://localhost:5001/api/auth/register', // Make sure this matches your backend port
+        'http://localhost:5001/api/auth/register', // Matches your backend port
         formData
       );
       alert(res.data.message);
-      // Optionally, clear the form or redirect after success
-      setFormData({ name: '', email: '', password: '' });
+      // Clear the form after success
+      setFormData({ name: '', email: '', password: '', role: 'general' });
     } catch (error) {
       alert(error.response?.data?.message || 'Registration failed');
     }
@@ -69,6 +71,18 @@ const CreateAccount = () => {
           onChange={handleChange}
           required
         />
+
+        <label htmlFor="role">User Type</label>
+        <select
+          id="role"
+          name="role"
+          value={formData.role}
+          onChange={handleChange}
+          required
+        >
+          <option value="general">General User</option>
+          <option value="receiver">Receiver</option>
+        </select>
 
         <button type="submit">Create Account</button>
       </form>

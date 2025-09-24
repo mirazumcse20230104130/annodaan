@@ -79,7 +79,7 @@
 
 /* Mission and Team Boxes */
 .mission-boxes, .team-boxes {
-  width: 100%;
+  width: 80%;
   display: grid;
   gap: 20px;
   padding: 20px 0;

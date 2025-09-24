@@ -16,7 +16,7 @@ const Navigation = () => {
     { path: "/", label: "Home" },
     { path: "/donate", label: "Donate Here" },
     { path: "/about", label: "About Us", hasDropdown: true },
-    { path: "/create-account", label: "Sign In" },
+    { path: "/login", label: "Sign In" },
   ];
 
   return (
